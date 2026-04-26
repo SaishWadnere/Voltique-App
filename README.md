@@ -8,6 +8,8 @@ A premium e-commerce frontend for curated electronics, built with **React 19**, 
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-Auth-FFCA28?logo=firebase&logoColor=black)
 
+### 🔗 [Live Demo](https://voltique-app.vercel.app/)
+
 ---
 
 ## Features
@@ -72,8 +74,8 @@ src/
 
 ```bash
 # Clone & install
-git clone https://github.com/SaishWadnere/Voltique-web-React-Firebase-.git
-cd Voltique-web-React-Firebase-
+git clone https://github.com/SaishWadnere/Voltique-App.git
+cd Voltique-App
 
 npm install
 

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { products } from '../../data/products';
 
-const relatedIds = ['voltique-slate-v3', 'echo-chrono', 'void-book-16', 'ion-phone-ultra'];
+const relatedIds = ['p3', 'p6', 'p10', 'p14'];
 
 export default function RelatedProducts() {
   const related = products.filter((p) => relatedIds.includes(p.id));
