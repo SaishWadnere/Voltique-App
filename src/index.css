@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #000000;
+  --color-primary-container: #1C1B1B;
+  --color-on-primary: #FFFFFF;
+  --color-secondary: #0051D5;
+  --color-secondary-hover: #2563EB;
+  --color-on-secondary: #FFFFFF;
+  --color-tertiary: #D0F047;
+  --color-tertiary-dark: #B8D63F;
+  --color-on-tertiary: #000000;
+  --color-surface: #F9F9F9;
+  --color-surface-low: #F3F3F3;
+  --color-surface-lowest: #FFFFFF;
+  --color-surface-high: #E8E8E8;
+  --color-surface-highest: #DEDEDE;
+  --color-on-surface: #1A1C1C;
+  --color-on-surface-variant: #44474A;
+  --color-outline-variant: #C4C7C7;
+
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --text-display: 3.5rem;
+  --text-headline: 1.75rem;
+  --text-title: 1.25rem;
+  --text-body: 1rem;
+  --text-label: 0.75rem;
+  --text-label-sm: 0.625rem;
+
+  --radius-sm: 12px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --radius-full: 9999px;
+
+  --shadow-ambient: 0 10px 40px rgba(26, 28, 28, 0.04);
+  --shadow-hover: 0 14px 48px rgba(26, 28, 28, 0.08);
+  --shadow-card: 0 4px 24px rgba(26, 28, 28, 0.03);
+
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-fade-in: fade-in 0.5s ease-out both;
+  --animate-scale-in: scale-in 0.4s ease-out both;
+  --animate-slide-right: slide-right 0.5s ease-out both;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-inter);
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
+  }
+
+  input, textarea, select, button {
+    font-family: var(--font-inter);
+  }
+}
+
+@utility glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+}
+
+@utility glass-dark {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+}
+
+@utility ghost-border {
+  border: 1px solid rgba(196, 199, 199, 0.15);
+}
+
+@utility gradient-metal {
+  background: linear-gradient(135deg, #000000, #1C1B1B);
+}
+
+@utility text-label-uppercase {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@utility btn-primary-hover {
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 24px rgba(208, 240, 71, 0.2);
+  }
+}
+
+@utility btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  color: var(--color-on-surface);
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border: 1px solid rgba(196, 199, 199, 0.3);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@utility btn-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@utility section-padding {
+  padding: 80px 0;
+}
+
+@utility container-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
